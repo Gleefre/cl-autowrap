@@ -7,7 +7,7 @@
 
  ;; Wrappers
 
-(declaim (inline make-wrapper wrapper-ptr))
+(declaim (inline make-wrapper #-cmucl wrapper-ptr))
 (defstruct wrapper
   #+(or cmucl clasp ecl sbcl clisp lispworks)
   (ptr (cffi:null-pointer) :type cffi:foreign-pointer)
